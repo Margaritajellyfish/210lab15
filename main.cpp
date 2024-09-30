@@ -1,20 +1,10 @@
-/*Code a Movie class that has the screen writer, the year released, and the title as its private member variables. It has the standard setters and getters for each private member variable. Also code a print() method which prints the object data in a simple format.
 
-Your code should read data from an input file, using the data below, which lists data in this order: title, year released, screen writer name.
-
-Read this data into a temporary Movie object. Then append that object to your container.
-
-For your container, you can choose an <array> class array or a <vector> class vector. Store your four records in this container.
-
-Towards the end of your main() function, output the contents of the array/vector.
-*/
 #include<iostream>
 #include<iomanip>
 #include<fstream>
 #include<array>
 
 using namespace std;
-
 
 class Movie{
 
@@ -40,15 +30,27 @@ int main(){
     string writer;
     ifstream fin;
 
+    fin.open("movies.txt");
     if(fin.good()){
-        while(getline(fin, title){
-            fin >> year;
-            cin.ignore();
-            getline(fin, )
+        while(getline(fin, title)){
+            Movie movie;
+            int i = 0;
 
+            fin >> year;
+            fin.ignore();
+            getline(fin, writer);
+            movie.setYea(year);
+            movie.setWri(writer);
+            movie.setTit(title);
+            movies.push_back(movie);           
     }
     }
     
-    else cout<<"faild to open file."
+    else cout<<"faild to open file.";
+
+    for(auto &i : movies){
+        cout << "Movie: " << i.getTit() << "\nYear released: " << i.getYea() 
+        << "Screenwriter: " << i.getWri() << "\n\n";
+    }
     return 0;
 }
