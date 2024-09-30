@@ -10,6 +10,9 @@ Towards the end of your main() function, output the contents of the array/vector
 */
 #include<iostream>
 #include<iomanip>
+#include<fstream>
+#include<array>
+
 using namespace std;
 
 
@@ -31,7 +34,21 @@ string getTit() {return title;}
 };
 
 int main(){
+    vector<Movie> movies;
+    string title;
+    int year;
+    string writer;
+    ifstream fin;
 
+    if(fin.good()){
+        while(getline(fin, title){
+            fin >> year;
+            cin.ignore();
+            getline(fin, )
 
+    }
+    }
+    
+    else cout<<"faild to open file."
     return 0;
 }
