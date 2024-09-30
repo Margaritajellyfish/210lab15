@@ -31,7 +31,7 @@ int main(){
     ifstream fin;
 
     fin.open("movies.txt");
-    if(fin.good()){
+    if(fin){
         while(getline(fin, title)){
             Movie movie;
             int i = 0;
@@ -48,9 +48,9 @@ int main(){
     
     else cout<<"faild to open file.";
 
-    for(auto &i : movies){
-        cout << "Movie: " << i.getTit() << "\nYear released: " << i.getYea() 
-        << "Screenwriter: " << i.getWri() << "\n\n";
+    for(int i=0; i< 4; i++){
+        cout << "Movie: " << movies[i].getTit() << "\nYear released: " << movies[i].getYea() 
+        << "Screenwriter: " << movies[i].getWri() << "\n\n";
     }
     return 0;
 }
